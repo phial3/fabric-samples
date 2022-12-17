@@ -1,0 +1,15 @@
+1. error when reading core config file: Config File “core“ Not Found in
+export FABRIC_CFG_PATH=$PWD/../config/
+href: https://blog.csdn.net/qq_40713201/article/details/125116833
+
+2. macOS go: no such tool "compile"
+export GOTOOLDIR=$GOROOT/pkg
+cd $GOROOT
+ln -s libexec/pkg ./pkg
+
+3. InitCmd -> Cannot run peer because cannot init crypto, specified path "/Users/admin/Workspace/golang/src/github.com/fabric/scripts/fabric-samples/config/msp" does not exist or cannot be accessed
+export CORE_PEER_MSPCONFIGPATH=${PWD}/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+export CORE_PEER_TLS_ROOTCERT_FILE=${PWD}/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+export CORE_PEER_LOCALMSPID="Org1MSP"
+
+

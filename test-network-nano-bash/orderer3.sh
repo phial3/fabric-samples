@@ -26,4 +26,4 @@ export ORDERER_OPERATIONS_LISTENADDRESS=127.0.0.1:8445
 export ORDERER_ADMIN_LISTENADDRESS=127.0.0.1:9445
 
 # start orderer
-orderer
+./orderer

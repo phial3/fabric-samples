@@ -41,4 +41,4 @@ export CORE_LEDGER_SNAPSHOTS_ROOTDIR="${PWD}"/data/peer1.org1.example.com/snapsh
 # docker run --publish 5985:5984 --detach -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password --name couchdb2 couchdb:3.1.1
 
 # start peer
-peer node start
+./peer node start
