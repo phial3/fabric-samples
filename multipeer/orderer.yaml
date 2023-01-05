@@ -39,12 +39,8 @@ services:
       - ./crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/:/var/hyperledger/orderer/tls
     ports:
       - 7050:7050
-    extra_hosts:
-      - "orderer.example.com:172.48.1.11"
-      - "peer0.org1.example.com:172.48.1.21"
-      - "peer0.org2.example.com:172.48.1.23"
     networks:
       localnet:
         aliases:
           - orderer
-        ipv4_address: 172.48.1.11
+        ipv4_address: 172.48.1.10
