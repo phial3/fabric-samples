@@ -80,7 +80,7 @@ export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric
 peer channel create \
     -o orderer.example.com:7050 \
     -c $CHANNEL_NAME \
-    -f ./channel-artifacts/channel.tx \
+    -f /opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts/channel.tx \
     --tls \
     --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 ```
@@ -105,7 +105,7 @@ peer channel join -b mychannel.block
 
 # 将 peer0.org2 加入到 channel 中
 export  CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp 
-export CORE_PEER_ADDRESS=peer0.org2.example.com:9051 
+export CORE_PEER_ADDRESS=peer0.org2.example.com:8051 
 export CORE_PEER_LOCALMSPID="Org2MSP" 
 export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt 
 
@@ -131,20 +131,20 @@ export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric
 peer channel update \
     -o orderer.example.com:7050 \
     -c $CHANNEL_NAME \
-    -f ./channel-artifacts/Org1MSPanchors.tx \
+    -f /opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts/Org1MSPanchors.tx \
     --tls \
     --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
 # 更新 org2 的 anchor peer
 export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp 
-export CORE_PEER_ADDRESS=peer0.org2.example.com:9051 
+export CORE_PEER_ADDRESS=peer0.org2.example.com:8051 
 export CORE_PEER_LOCALMSPID="Org2MSP" 
 export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt 
 
 peer channel update \
     -o orderer.example.com:7050 \
     -c $CHANNEL_NAME \
-    -f ./channel-artifacts/Org2MSPanchors.tx \
+    -f /opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts/Org2MSPanchors.tx \
     --tls \
     --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 ```
