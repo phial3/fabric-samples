@@ -1,5 +1,9 @@
 # Fabric2.4 多机部署
 
+[fabric 2.2 多机部署参考]: https://blog.csdn.net/Wannabe_hacker/article/details/123796098
+
+
+
 ## 1. 编写生成证书文件
 
 ### (1)生成证书文件的配置文件：crypto-config.yaml
